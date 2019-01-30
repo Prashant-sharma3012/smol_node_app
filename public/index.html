@@ -1,0 +1,40 @@
+<html>
+  <header></header>
+
+  <body>
+    <div>
+      <button id="button1">Button1</button>
+      <button id="button2">Button2</button>
+    </div>
+
+
+    <script>
+      function button1() {
+        console.log('making server call');
+
+        fetch('http://localhost:3000/button1')
+          .then(function (response) {
+            console.log("response for button 1");
+            console.log(response);
+          });
+      }
+
+      function button2() {
+        fetch('http://localhost:3000/button2')
+          .then(function (response) {
+            console.log("response for button 2");
+            console.log(response);
+          });
+      }
+
+      var b1 = document.getElementById('button1');
+      var b2 = document.getElementById('button2');
+
+      b1.addEventListener('click', button1);
+      b2.addEventListener('click', button2);
+
+    </script>
+
+  </body>
+
+</html>
